@@ -11,6 +11,7 @@ import LoginScreen from './screens/Login';
 import RegisterScreen from './screens/Register';
 import MainScreen from './screens/Main';
 import Collection from './screens/Collection';
+import DetailScreen from './screens/Detail';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,7 @@ export default function App() {
         <Stack.Screen name="Register" component={RegisterScreen}/>
         <Stack.Screen name="Main" component={MainScreen}/>
         <Stack.Screen name="Collection" component={Collection}/>
+        <Stack.Screen name="Detail" component={DetailScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

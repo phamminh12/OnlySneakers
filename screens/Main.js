@@ -8,20 +8,22 @@ import {
     FlatList,
     TouchableOpacity,
     StyleSheet,
+    SectionList,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 import Header from '../components/Header';
 import categories from '../data/categories';
 
-function MainScreen ({navigation}) {
+function MainScreen({ navigation }) {
 
-    const [currentCategory, setCurrentCategory] = useState(categories[0]);
+    const [currentCategory, setCurrentCategory] = useState(categories[0].name);
 
-    return(
-        <View style={{
+    return (
+        <ScrollView style={{
             flex: 1,
             paddingHorizontal: 12,
+            paddingBottom: 24,
             backgroundColor: 'rgba(230, 243, 253, 1)',
         }}>
             <Header navigation={navigation} />
@@ -59,7 +61,7 @@ function MainScreen ({navigation}) {
                         fontSize: 18,
                     }}>On Your Purchase</Text>
                     <Pressable
-                        onPress= {() => {navigation.navigate('Collection')}}
+                        onPress={() => { navigation.navigate('Collection') }}
                         style={[{
                             marginTop: 12,
                             paddingHorizontal: 6,
@@ -69,7 +71,7 @@ function MainScreen ({navigation}) {
                             borderRadius: 12,
                         }]}
                     >
-                        {({pressed})=>(
+                        {({ pressed }) => (
                             <Text style={{
                                 fontSize: 16,
                                 color: '#fff',
@@ -80,32 +82,98 @@ function MainScreen ({navigation}) {
                     </Pressable>
                 </View>
                 <Image
-                    source={require('../assets/images/nike8rb.png')}
+                    source={require('../assets/images/nikerb.png')}
                     style={{
                         resizeMode: 'cover',
                         height: 100,
                         width: 200,
+                        transform: [{ rotate: '-24deg' }]
                     }}
+                />
+            </View>
+            <View style={{
+                marginTop: 24,
+            }}>
+                <FlatList
+                    horizontal
+                    data={categories}
+                    keyExtractor={item => item.id}
+                    showsHorizontalScrollIndicator={false}
+                    renderItem={({ item }) => (
+                        <TouchableOpacity
+                            onPress={() => { setCurrentCategory(item.name); }}
+                            style={styles.tab(currentCategory, item.name)}
+                        >
+                            <Text style={styles.textTab(currentCategory, item.name)}>{item.name}</Text>
+                        </TouchableOpacity>
+                    )}
                 />
             </View>
             <View style={{
                 marginTop: 12,
             }}>
                 <FlatList
-                    horizontal
-                    data = {categories}
-                    keyExtractor={item => item}
-                    renderItem = {({ item }) => (
-                        <TouchableOpacity
-                            onPress = {() => {setCurrentCategory(item);}}
-                            style = {styles.tab(currentCategory, item)}
-                        >
-                            <Text style={styles.textTab(currentCategory, item)}>{item}</Text>
-                        </TouchableOpacity>
+                    numColumns={2}
+                    // horizontal
+                    data={[1,2,3,4,5,6]}
+                    scrollEnabled={true}
+                    renderItem={({ item }) => (
+                        <View style={{
+                            height: 280,
+                            width: 200,
+                            paddingTop: 12,
+                            paddingLeft: 12,
+                            marginLeft: 12,
+                            marginTop: 12,
+                            backgroundColor: "#fff",
+                            borderRadius: 12,
+                        }}>
+                            <Image
+                                source={require('../assets/images/nike1.png')}
+                                style={{
+                                    resizeMode: 'contain',
+                                    height: 186,
+                                    width: 180,
+        
+                                }}
+                            />
+                            <Text style={{
+                                width: 160,
+                                fontSize: 16,
+                                fontWeight: 'bold',
+                            }}>
+                                Air Force 1 Zoom CMFT 2
+                            </Text>
+                            <View style={{
+                                flexDirection: 'row',
+                                justifyContent: 'space-between',
+                            }}>
+                                <Text style={{
+                                    marginTop: 6,
+                                    color: 'rgba(221, 120, 48, 1)',
+                                }}>
+                                    <Ionicons name="logo-bitcoin" />
+                                    13.299
+                                </Text>
+                                <View style={{
+                                    marginTop: 8,
+                                    padding: 4,
+                                    backgroundColor: 'rgba(54, 162, 222, 1)',
+                                    borderBottomRightRadius: 12,
+                                    borderTopLeftRadius: 12,
+                                }}>
+                                    <Ionicons
+                                        name = "add"
+                                        size = {24}
+                                        color = 'white'
+                                    />
+                                </View>
+                            </View>
+                        </View>  
                     )}
                 />
             </View>
-        </View>
+        </ScrollView>
     );
 };
 

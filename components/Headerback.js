@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-function Header ({navigation}) {
+function Headerback ({navigation}) {
     return(
         <View style={{
             flexDirection: 'row',
@@ -14,13 +14,15 @@ function Header ({navigation}) {
         }}>
             <TouchableOpacity>
                 <Ionicons
-                    name="menu-outline"
+                    name = "arrow-back-circle-outline"
+                    color = "rgba(39, 153, 245, 1)"
                     size={32}
                 />
             </TouchableOpacity>
             <TouchableOpacity>
                 <Ionicons
-                    name="cart-outline"
+                    name = "cart-outline"
+                    color = "rgba(39, 153, 245, 1)"
                     size={32}
                 />
             </TouchableOpacity>
@@ -28,4 +30,4 @@ function Header ({navigation}) {
     );
 }
 
-export default Header;
+export default Headerback;
