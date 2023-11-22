@@ -2,28 +2,36 @@ import React from 'react';
 import {
     View,
     TouchableOpacity,
+    Text,
+    StyleSheet,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-function Headerback ({navigation}) {
+function Headerback ({navigation, title}) {
     return(
         <View style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
+            position: 'absolute', top: 0,
+            width: '94%',
+            flexDirection: 'row', justifyContent: 'space-between',
             marginTop: 24,
+            marginHorizontal: 12,
+            zIndex: 3,
         }}>
-            <TouchableOpacity>
+            <TouchableOpacity style={styler.button}>
                 <Ionicons
                     name = "arrow-back-circle-outline"
                     color = "rgba(39, 153, 245, 1)"
-                    size={32}
+                    size={36}
                 />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <Text style={{
+                fontSize: 24,
+            }}>{title}</Text>
+            <TouchableOpacity style={styler.button}>
                 <Ionicons
                     name = "cart-outline"
-                    color = "rgba(39, 153, 245, 1)"
-                    size={32}
+                    color = "#333"
+                    size={36}
                 />
             </TouchableOpacity>
         </View>
@@ -31,3 +39,10 @@ function Headerback ({navigation}) {
 }
 
 export default Headerback;
+
+
+const styler = StyleSheet.create({
+    button: {
+
+    }
+})

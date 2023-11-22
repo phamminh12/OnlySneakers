@@ -9,6 +9,7 @@ import {
     TouchableOpacity,
     StyleSheet,
     SectionList,
+    ScrollViewBase,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -20,7 +21,7 @@ function MainScreen({ navigation }) {
     const [currentCategory, setCurrentCategory] = useState(categories[0].name);
 
     return (
-        <ScrollView style={{
+        <View style={{
             flex: 1,
             paddingHorizontal: 12,
             paddingBottom: 24,
@@ -113,9 +114,9 @@ function MainScreen({ navigation }) {
                 marginTop: 12,
             }}>
                 <FlatList
-                    numColumns={2}
+                    nestedScrollEnabled={true}
                     // horizontal
-                    data={[1,2,3,4,5,6]}
+                    data={[1,2,3,4,5,6,7,8]}
                     scrollEnabled={true}
                     renderItem={({ item }) => (
                         <View style={{
@@ -142,7 +143,7 @@ function MainScreen({ navigation }) {
                                 fontSize: 16,
                                 fontWeight: 'bold',
                             }}>
-                                Air Force 1 Zoom CMFT 2
+                                {item}Air Force 1 Zoom CMFT 2
                             </Text>
                             <View style={{
                                 flexDirection: 'row',
@@ -171,9 +172,11 @@ function MainScreen({ navigation }) {
                             </View>
                         </View>  
                     )}
+                    numColumns={2}
+                    
                 />
             </View>
-        </ScrollView>
+        </View>
     );
 };
 

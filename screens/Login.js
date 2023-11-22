@@ -48,7 +48,7 @@ function LoginScreen({ navigation }) {
                         onPress={() => alert('Coming Soon')}
                         style={[styles.btnContainer,{backgroundColor: 'rgba(199, 210, 217, 1)',}]}
                     >
-                        <Ionicons name="logo-google" size={20} color="rgba(0, 107, 180, 1)" />
+                        <Ionicons name="logo-google" size={20} color="  " />
                         <Text style={styles.textLogin}>Log In With Google</Text>
                     </Pressable>
                 </View>

@@ -26,12 +26,12 @@ function DetailScreen({ navigation }) {
 
     return (
         <>
+            <Headerback navigation={navigation} />
             <ScrollView style={{
                 flex: 1,
                 paddingHorizontal: 12,
                 backgroundColor: 'rgba(204, 219, 230, 1)',
             }}>
-                <Headerback navigation={navigation} />
 
                 <Image
                     source={require('../assets/images/nike1.png')}
