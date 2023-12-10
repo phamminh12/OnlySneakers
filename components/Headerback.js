@@ -19,7 +19,7 @@ function Headerback ({navigation, title}) {
         }}>
             <TouchableOpacity style={styler.button}>
                 <Ionicons
-                    name = "arrow-back-circle-outline"
+                    name = "chevron-back-outline"
                     color = "rgba(39, 153, 245, 1)"
                     size={36}
                 />
@@ -27,7 +27,7 @@ function Headerback ({navigation, title}) {
             <Text style={{
                 fontSize: 24,
             }}>{title}</Text>
-            <TouchableOpacity style={styler.button}>
+            <TouchableOpacity>
                 <Ionicons
                     name = "cart-outline"
                     color = "#333"
@@ -43,6 +43,7 @@ export default Headerback;
 
 const styler = StyleSheet.create({
     button: {
-
+        paddingRight: 1,
+        backgroundColor: '#fff', borderRadius: 18,
     }
 })
