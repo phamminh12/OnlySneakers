@@ -15,7 +15,7 @@ import Headerback0 from '../components/Headerback0';
 export default function UserScreen ({navigation}) {
     return (
         <View style={{
-            
+            marginTop: 6,
           
         }}>
             <Headerback0 navigation={navigation} title='Only'/>
@@ -24,7 +24,7 @@ export default function UserScreen ({navigation}) {
             }}>
             </View>
             <View style={{
-                height:200,
+                height:180,
                 alignItems:'center',
             }}>
                 <Image style={{
@@ -38,7 +38,7 @@ export default function UserScreen ({navigation}) {
 
                 }} source={require('../assets/images/logo.jpg')}/>
                 <Text style={{
-                    fontSize:35,
+                    fontSize:28,
                     fontWeight:'bold',
                     height:50,
                 }}>
