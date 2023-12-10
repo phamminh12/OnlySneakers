@@ -15,13 +15,14 @@ import DetailScreen from './screens/Detail';
 import CartScreen from './screens/Cart';
 import CheckoutScreen from './screens/Checkout';
 import FavoriteScreen from './screens/Favorite';
+import UserScreen from './screens/User';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Favorite" screenOptions={{ headerShown: false }}>
+      <Stack.Navigator initialRouteName="User" screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Landing" component={LandingScreen}/>
         <Stack.Screen name="Slide" component={SlideScreen}/>
         <Stack.Screen name="Login" component={LoginScreen}/>
@@ -32,6 +33,7 @@ export default function App() {
         <Stack.Screen name="Cart" component={CartScreen}/>
         <Stack.Screen name="Checkout" component={CheckoutScreen}/>
         <Stack.Screen name="Favorite" component={FavoriteScreen}/>
+        <Stack.Screen name="User" component={UserScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
