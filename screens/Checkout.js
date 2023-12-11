@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     View,
     Image,
@@ -7,17 +7,83 @@ import {
     TouchableOpacity,
     StyleSheet,
     TextInput,
+    Modal,
+    Button,
+    SafeAreaView,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+// import Modal from 'react-native-modal';
 
 import Headerback from '../components/Headerback';
 
-export default function CheckoutScreen({ navigation }){
+export default function CheckoutScreen({ navigation }) {
+    const [showModal, setShowModal] = useState(false);
+
+    const toggleModal = () => {
+        setShowModal(!showModal);
+    }
+
     return (
         <View style={{
             flex: 1,
             backgroundColor: 'rgba(204, 219, 230, 1)',
         }}>
+
+
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={showModal}
+                onRequestClose={() => {
+                    toggleModal();
+                }}
+                style={{
+                    flex: 1, 
+                }}
+            >
+                <SafeAreaView style={{
+                    flex: 1,justifyContent: 'center', alignItems: 'center',
+                    backgroundColor: 'rgba(0,0,0,0.6)',
+                }}>
+                    <View style={{
+                        padding: 24,
+                        backgroundColor: "#fff", borderRadius: 12,
+                    }}>
+                        <Image
+                            source = {require('../assets/images/success.png')}
+                            style={{
+                                alignSelf: 'center',
+                                resizeMode: 'contain',
+                                height: 120, width: 160,
+                            }}
+                        />
+                        <Text style={{
+                            fontSize: 16, fontWeight: 'bold',
+                        }}>Your Payment is Successful</Text>
+                        <View style={{
+                            flexDirection: 'row', justifyContent: 'space-between',
+                            marginTop: 8,
+                        }}>
+                            <TouchableOpacity
+                                onPress={() => toggleModal()}
+                            >
+                                <Text style={{
+                                    color: 'red'
+                                }}>Cancel</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate("Tabs")}
+                            >
+                                <Text style={{
+                                    color: 'blue',
+                                }}>Continue Shopping</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </SafeAreaView>
+            </Modal>
+
+
             <Headerback navigation={navigation} title={'CheckOut'} />
             <View style={{
                 // flex: 0.42,
@@ -32,29 +98,29 @@ export default function CheckoutScreen({ navigation }){
                 <TextInput
                     placeholder='Address'
                     placeholderTextColor='#444'
-                    onChangeText = {newtext => {}}
-                    name = 'address'
+                    onChangeText={newtext => { }}
+                    name='address'
                     style={styler.textInput}
                 />
                 <TextInput
                     placeholder='City'
                     placeholderTextColor='#444'
-                    onChangeText = {newtext => {}}
-                    name = 'city'
+                    onChangeText={newtext => { }}
+                    name='city'
                     style={styler.textInput}
                 />
                 <TextInput
                     placeholder='Pincode'
                     placeholderTextColor='#444'
-                    onChangeText = {newtext => {}}
-                    name = 'pincode'
+                    onChangeText={newtext => { }}
+                    name='pincode'
                     style={styler.textInput}
                 />
                 <TextInput
                     placeholder='Number'
                     placeholderTextColor='#444'
-                    onChangeText = {newtext => {}}
-                    name = 'number'
+                    onChangeText={newtext => { }}
+                    name='number'
                     style={styler.textInput}
                 />
             </View>
@@ -186,7 +252,9 @@ export default function CheckoutScreen({ navigation }){
                     justifyContent: 'center', alignItems: 'center',
                     backgroundColor: 'rgba(38, 126, 255, 0.8)',
                     borderRadius: 24,
-                }}>
+                }}
+                    onPress={() => toggleModal()}
+                >
                     <Text style={{
                         fontSize: 18, color: '#fff',
                     }}>
