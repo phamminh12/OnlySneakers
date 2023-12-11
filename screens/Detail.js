@@ -27,11 +27,13 @@ function DetailScreen({ navigation }) {
     return (
         <>
             <Headerback navigation={navigation} />
-            <ScrollView style={{
-                flex: 1,
-                paddingHorizontal: 12,
-                backgroundColor: 'rgba(204, 219, 230, 1)',
-            }}>
+            <ScrollView
+                showsVerticalScrollIndicator={false}
+                style={{
+                    flex: 1,
+                    paddingHorizontal: 12,
+                    backgroundColor: 'rgba(204, 219, 230, 1)',
+                }}>
 
                 <Image
                     source={require('../assets/images/nike1.png')}
@@ -196,10 +198,14 @@ function DetailScreen({ navigation }) {
                                     }}>
                                         Air Jordan Low PF
                                     </Text>
-                                    <Ionicons
-                                        name="heart-outline"
-                                        size={25}
-                                    />
+                                    <TouchableOpacity
+                                        onPress = {()=>navigation.navigate('Favorite')}
+                                    >
+                                        <Ionicons
+                                            name="heart-outline"
+                                            size={25}
+                                        />
+                                    </TouchableOpacity>
                                 </View>
                                 <Text style={[{
                                     alignSelf: 'flex-start',
@@ -240,7 +246,9 @@ function DetailScreen({ navigation }) {
                     justifyContent: 'center',
                     backgroundColor: 'rgba(0,0,0,0.86)',
                     borderRadius: 24,
-                }}>
+                }}
+                    onPress={() => navigation.navigate('Cart')}
+                >
                     <Text style={{
                         textAlign: 'center',
                         color: "#fff",

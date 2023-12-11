@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
     View,
     Text,
@@ -7,6 +7,14 @@ import {
 } from 'react-native';
 
 function LandingScreen({ navigation }){
+    useEffect(() => {
+        const timer = setTimeout(() => {
+          navigation.replace('Slide'); 
+        }, 5000);
+    
+        // Hủy bỏ timer
+        // return () => clearTimeout(timer);
+      }, [navigation]);
     return (
         <View style={{ flex: 1 }}>
             <ImageBackground

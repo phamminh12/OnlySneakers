@@ -36,7 +36,7 @@ export default function UserScreen ({navigation}) {
                     borderWidth:1,
                     borderColor:'blue'
 
-                }} source={require('../assets/images/logo.jpg')}/>
+                }} source={require('../assets/images/avatar.jpg')}/>
                 <Text style={{
                     fontSize:28,
                     fontWeight:'bold',
@@ -80,7 +80,9 @@ export default function UserScreen ({navigation}) {
                  style={styles.input}
                 />
 
-                <TouchableOpacity >
+                <TouchableOpacity 
+                    onPress = {()=>navigation.navigate('Login')}
+                >
                     <Text style={[
                         styles.title,{
                             fontWeight:'bold',

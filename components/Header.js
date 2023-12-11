@@ -12,13 +12,17 @@ function Header ({navigation}) {
             justifyContent: 'space-between',
             marginTop: 24,
         }}>
-            <TouchableOpacity>
+            <TouchableOpacity
+                onPress = {()=> {}}
+            >
                 <Ionicons
                     name="menu-outline"
                     size={32}
                 />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity
+                onPress = {() => navigation.navigate('Cart')}
+            >
                 <Ionicons
                     name="cart-outline"
                     size={32}

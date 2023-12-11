@@ -116,10 +116,11 @@ function MainScreen({ navigation }) {
                 <FlatList
                     nestedScrollEnabled={true}
                     // horizontal
-                    data={[1,2,3,4,5,6,7,8]}
+                    data={[1, 1, 1, 1, 1, 1, 1, 1]}
                     scrollEnabled={true}
+                    numColumns={2}
                     renderItem={({ item }) => (
-                        <View style={{
+                        <TouchableOpacity style={{
                             height: 280,
                             width: 200,
                             paddingTop: 12,
@@ -128,14 +129,16 @@ function MainScreen({ navigation }) {
                             marginTop: 12,
                             backgroundColor: "#fff",
                             borderRadius: 12,
-                        }}>
+                        }}
+                            onPress = {()=>navigation.navigate('Detail')}
+                        >
                             <Image
                                 source={require('../assets/images/nike1.png')}
                                 style={{
                                     resizeMode: 'contain',
                                     height: 186,
                                     width: 180,
-        
+
                                 }}
                             />
                             <Text style={{
@@ -156,24 +159,25 @@ function MainScreen({ navigation }) {
                                     <Ionicons name="logo-bitcoin" />
                                     13.299
                                 </Text>
-                                <View style={{
+                                <TouchableOpacity style={{
                                     marginTop: 8,
                                     padding: 4,
                                     backgroundColor: 'rgba(54, 162, 222, 1)',
                                     borderBottomRightRadius: 12,
                                     borderTopLeftRadius: 12,
-                                }}>
+                                }}
+                                    onPress = {()=>navigation.navigate('Cart')}
+                                >
                                     <Ionicons
-                                        name = "add"
-                                        size = {24}
-                                        color = 'white'
+                                        name="add"
+                                        size={24}
+                                        color='white'
                                     />
-                                </View>
+                                </TouchableOpacity>
                             </View>
-                        </View>  
+                        </TouchableOpacity>
                     )}
-                    numColumns={2}
-                    
+
                 />
             </View>
         </View>

@@ -80,7 +80,7 @@ export default function CartScreen({ navigation }) {
             </ScrollView>
             <View style={{
                 paddingHorizontal: 12, paddingTop: 12,
-                flex: 0.3,
+                flex: 0.36,
                 width: '100%', height: 160,
                 backgroundColor: '#ccc',
             }}>
@@ -147,7 +147,9 @@ export default function CartScreen({ navigation }) {
                     justifyContent: 'center', alignItems: 'center',
                     backgroundColor: 'rgba(38, 126, 255, 0.8)',
                     borderRadius: 24,
-                }}>
+                }}
+                    onPress = {()=>navigation.navigate('Checkout')}
+                >
                     <Text style={{
                         fontSize: 18, color: '#fff',
                     }}>

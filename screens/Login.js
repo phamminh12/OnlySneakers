@@ -38,19 +38,19 @@ function LoginScreen({ navigation }) {
                 <View style={{
                     marginTop: 32,
                 }}>
-                    <Pressable
-                        onPress={() => { }}
+                    <TouchableOpacity
+                        onPress={() => { navigation.navigate('Tabs') }}
                         style={[styles.btnContainer,{backgroundColor: 'rgba(214, 215, 216, 1)',}]}
                     >
                         <Text style={styles.textLogin}>Log In</Text>
-                    </Pressable>
-                    <Pressable
+                    </TouchableOpacity>
+                    <TouchableOpacity
                         onPress={() => alert('Coming Soon')}
                         style={[styles.btnContainer,{backgroundColor: 'rgba(199, 210, 217, 1)',}]}
                     >
                         <Ionicons name="logo-google" size={20} color="  " />
                         <Text style={styles.textLogin}>Log In With Google</Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
                 <View style={{
                     marginTop: 60,

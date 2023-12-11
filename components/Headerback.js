@@ -17,7 +17,9 @@ function Headerback ({navigation, title}) {
             marginHorizontal: 12,
             zIndex: 3,
         }}>
-            <TouchableOpacity style={styler.button}>
+            <TouchableOpacity style={styler.button}
+                onPress = {()=>navigation.goBack()}
+            >
                 <Ionicons
                     name = "chevron-back-outline"
                     color = "rgba(39, 153, 245, 1)"
@@ -27,10 +29,16 @@ function Headerback ({navigation, title}) {
             <Text style={{
                 fontSize: 24,
             }}>{title}</Text>
-            <TouchableOpacity>
+            <TouchableOpacity
+                style = {{
+                    padding: 1,
+                    backgroundColor: 'rgba(255,255,255,0.6)', borderRadius: 18,
+                }}
+                onPress = {()=>navigation.navigate('Cart')}
+            >
                 <Ionicons
                     name = "cart-outline"
-                    color = "#333"
+                    color = "#666"
                     size={36}
                 />
             </TouchableOpacity>

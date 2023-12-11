@@ -19,7 +19,9 @@ function Headerback ({navigation, title}) {
             marginHorizontal: 12,
             zIndex: 3,
         }}>
-            <TouchableOpacity style={styler.button}>
+            <TouchableOpacity style={styler.button}
+                onPress = {()=>navigation.goBack()}
+            >
                 <Ionicons
                     name = "chevron-back-outline"
                     color = "rgba(39, 153, 245, 1)"

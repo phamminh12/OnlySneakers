@@ -37,7 +37,7 @@ export default function FavoriteScreen ({navigation}) {
     return (
         <SafeAreaView style={{
             flex: 1,
-            paddingHorizontal: 20,
+            paddingHorizontal: 12,
             backgroundColor: 'rgba(207, 220, 221, 1)', 
         }}>
             <Headerback navigation={navigation} title='Favorite'/>
@@ -48,10 +48,11 @@ export default function FavoriteScreen ({navigation}) {
                 renderItem={({item})=>(
                     <TouchableOpacity
                         style={{
-                            marginRight: 12, marginTop: 12, paddingHorizontal: 12, paddingBottom: 16,
+                            marginRight: 20, marginTop: 12, paddingHorizontal: 12, paddingBottom: 16,
                             width: 200, height: 240,
                             backgroundColor: '#bbb', borderRadius: 24,
                         }}
+                        onPress = {()=>navigation.navigate('Detail')}
                     >
                         <Image
                             source={item.img}
@@ -90,7 +91,9 @@ export default function FavoriteScreen ({navigation}) {
                     marginBottom: 20,
                     width: '100%', height: 60,
                     backgroundColor: 'rgba(4, 182, 220, 0.8)', borderRadius: 24,
-                }}>
+                }}
+                    onPress = {()=>navigation.navigate('Cart')}
+                >
                     <Text style={{
                         color: '#fff', fontSize: 18,
                     }}>Add to Cart</Text>

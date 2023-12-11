@@ -49,12 +49,12 @@ function RegisterScreen({ navigation }) {
                 <View style={{
                     marginTop: 12,
                 }}>
-                    <Pressable
-                        onPress={() => { }}
+                    <TouchableOpacity
+                        onPress={() => { navigation.navigate('Tabs') }}
                         style={[styles.btnContainer,{backgroundColor: 'rgba(214, 215, 216, 1)',}]}
                     >
                         <Text style={styles.textLogin}>Sign Up</Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
                 <View style={{
                     marginTop: 12,

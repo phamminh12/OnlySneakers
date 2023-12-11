@@ -65,10 +65,12 @@ function Collection({ navigation }) {
                             Men's Shoes
                         </Text>
                     </View>
-                    <Ionicons
-                        name="heart-outline"
-                        size={32}
-                    />
+                    <TouchableOpacity onPress={() => navigation.navigate('Favorite')}>
+                        <Ionicons
+                            name="heart-outline"
+                            size={32}
+                        />
+                    </TouchableOpacity>
                 </View>
                 <View style={styler.linePoster}>
                     <Text style={styler.textPoster}>
@@ -108,8 +110,8 @@ function Collection({ navigation }) {
             }}>
                 <FlatList
                     horizontal
-                    data={[1, 2]}
-                    showsHorizontalScrollIndicator = {false}
+                    data={[1, 2, 3]}
+                    showsHorizontalScrollIndicator={false}
                     renderItem={({ item }) => (
                         <View style={{
                             width: 240,
@@ -138,10 +140,14 @@ function Collection({ navigation }) {
                                 }}>
                                     Air Jordan Low PF
                                 </Text>
-                                <Ionicons
-                                    name="heart-outline"
-                                    size={25}
-                                />
+                                <TouchableOpacity
+                                    onPress = {()=>navigation.navigate('Favorite')}
+                                >
+                                    <Ionicons
+                                        name="heart-outline"
+                                        size={25}
+                                    />
+                                </TouchableOpacity>
                             </View>
                             <Text style={[{
                                 alignSelf: 'flex-start',
