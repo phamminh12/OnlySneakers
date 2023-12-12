@@ -19,6 +19,7 @@ import CartScreen from './screens/Cart';
 import CheckoutScreen from './screens/Checkout';
 import FavoriteScreen from './screens/Favorite';
 import UserScreen from './screens/User';
+import MenuScreen from './screens/Menu';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -84,11 +85,12 @@ function Tabs() {
 
 function Stacks() {
   return (
-    <Stack.Navigator initialRouteName="Landing" screenOptions={{ headerShown: false }}>
+    <Stack.Navigator initialRouteName="Menu" screenOptions={{ headerShown: false }}>
       {/* <Stack.Screen name="Main" component={MainScreen} />
       <Stack.Screen name="Cart" component={CartScreen} />
       <Stack.Screen name="Favorite" component={FavoriteScreen} />
       <Stack.Screen name="User" component={UserScreen} /> */}
+      <Stack.Screen name="Menu" component={MenuScreen} />
       <Stack.Screen name="Tabs" component={Tabs} />
       <Stack.Screen name="Landing" component={LandingScreen} />
       <Stack.Screen name="Slide" component={SlideScreen} />

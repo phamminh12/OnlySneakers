@@ -13,7 +13,7 @@ function Header ({navigation}) {
             marginTop: 24,
         }}>
             <TouchableOpacity
-                onPress = {()=> {}}
+                onPress = {()=> {navigation.navigate('Menu')}}
             >
                 <Ionicons
                     name="menu-outline"
