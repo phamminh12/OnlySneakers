@@ -85,11 +85,11 @@ function Tabs() {
 
 function Stacks() {
   return (
-    <Stack.Navigator initialRouteName="Menu" screenOptions={{ headerShown: false }}>
-      {/* <Stack.Screen name="Main" component={MainScreen} />
+    <Stack.Navigator initialRouteName="Landing" screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Main" component={MainScreen} />
       <Stack.Screen name="Cart" component={CartScreen} />
       <Stack.Screen name="Favorite" component={FavoriteScreen} />
-      <Stack.Screen name="User" component={UserScreen} /> */}
+      <Stack.Screen name="User" component={UserScreen} />
       <Stack.Screen name="Menu" component={MenuScreen} />
       <Stack.Screen name="Tabs" component={Tabs} />
       <Stack.Screen name="Landing" component={LandingScreen} />

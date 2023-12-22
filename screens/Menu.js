@@ -68,7 +68,7 @@ export default function MenuScreen({ navigation }) {
                 marginTop: 12,
             }}>
                 <TouchableOpacity
-                    onPress={() => navigation.navigate('Tabs')}
+                    onPress={() => navigation.navigate('User')}
                     style={styler.button}
                 >
                     <Ionicons name='person-outline' size={28} color='#707B81' />
@@ -82,21 +82,21 @@ export default function MenuScreen({ navigation }) {
                     <Text style={styler.buttonText}>Home</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress={() => navigation.navigate('Tabs')}
+                    onPress={() => navigation.navigate('Cart')}
                     style={styler.button}
                 >
                     <Ionicons name='cart-outline' size={28} color='#707B81' />
                     <Text style={styler.buttonText}>My Cart</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress={() => navigation.navigate('Tabs')}
+                    onPress={() => navigation.navigate('Favorite')}
                     style={styler.button}
                 >
                     <Ionicons name='heart-outline' size={28} color='#707B81' />
                     <Text style={styler.buttonText}>Favorite</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress={() => navigation.navigate('Tabs')}
+                    onPress={() => navigation.navigate('Checkout')}
                     style={styler.button}
                 >
                     <Ionicons name='airplane-outline' size={28} color='#707B81' />

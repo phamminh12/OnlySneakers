@@ -65,14 +65,14 @@ export default function CheckoutScreen({ navigation }) {
                             marginTop: 8,
                         }}>
                             <TouchableOpacity
-                                onPress={() => toggleModal()}
+                                onPress={() => {toggleModal(); navigation.navigate('Cart')}}
                             >
                                 <Text style={{
                                     color: 'red'
                                 }}>Cancel</Text>
                             </TouchableOpacity>
                             <TouchableOpacity
-                                onPress={() => navigation.navigate("Tabs")}
+                                onPress={() => navigation.navigate("Main")}
                             >
                                 <Text style={{
                                     color: 'blue',
